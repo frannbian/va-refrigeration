@@ -2,20 +2,24 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-class ProductSeeder extends Seeder
+class ProductTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Product::factory()->count(5000)->create();
+        DB::table('product_types')->insert([
+            'name' => 'Mensulas',
+        ]);
+        DB::table('product_types')->insert([
+            'name' => 'Cables',
+        ]);
     }
 }
